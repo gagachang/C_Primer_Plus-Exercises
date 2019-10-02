@@ -1,6 +1,6 @@
 # C_Primer_Plus_ChineseVersion-Exercises
 The programming exercises at the end of each chapter in the "C Primer Plus". <br />
-I am reading this book recentlym, and push all the code I write here of exercises in this book. <br />
+I am reading this book recently, and push all the code I write here of the exercises in this book. <br />
 Please contact me if there is any infringement. <br />
 
 ## Contents
