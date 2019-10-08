@@ -1,6 +1,6 @@
 /*
  * Read the input string
- * Calculate how many 'ei' in the string
+ * Calculate how many "ei" matched in this string
  */
 #include <stdio.h>
 int main(void)
