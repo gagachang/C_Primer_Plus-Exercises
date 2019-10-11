@@ -23,7 +23,7 @@ int main(void)
 
 unsigned long Fibonacci(unsigned n)
 {
-    int f1 = 1, f2 = 1;
+    unsigned long f1 = 1, f2 = 1;
     unsigned long result = 0;
 
     if (n < 3)
