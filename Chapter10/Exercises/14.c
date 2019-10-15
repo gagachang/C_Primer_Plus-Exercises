@@ -54,7 +54,7 @@ int main(void)
 
 void input_array(int rows, int cols, double arr[rows][cols])
 {
-    printf("Enter the elements of this array:\n");
+    printf("Enter the elements of this %dx%d array:\n", rows, cols);
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < cols; j++)
             scanf("%lf", &arr[i][j]);
