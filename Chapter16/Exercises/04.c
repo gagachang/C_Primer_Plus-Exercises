@@ -35,7 +35,7 @@ void delay(double seconds)
     while (1)
     {
         end = (double) clock();
-        if (((end - start) / CLOCKS_PER_SEC) > seconds)
+        if (((end - start) / CLOCKS_PER_SEC) >= seconds)
             break;
     }
 
