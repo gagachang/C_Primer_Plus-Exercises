@@ -1,17 +1,18 @@
 /* 
- * This program is exammple 17.4 films3.c
- * Accroding to exercise 2, we need to modify following things:
+ * This program is example 17.4 films3.c
+ * Accroding to exercise 3, we need to redeclare the list structure:
  *
- * Define the list by follow description:
- * typedef struct list 
+ * #define MAXSIZE 100
+ * typedef struct list
  * {
- *     Node * head;
- *     Node * end;
+ *     Item entries[MAXSIZE];    // array of items
+ *     int items;                // number of items in list
  * } List;
  *
- * Rewrite the list.c and test the result by this program.
+ * And modify list.c to operate this struct.
+ * Finally, test the result by this program.
  *
- * This program must be compiled with list.c
+ * This file must be compiled with list.c
  */
 #include <stdio.h>
 #include <string.h>

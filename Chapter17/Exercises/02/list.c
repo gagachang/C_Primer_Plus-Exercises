@@ -82,7 +82,7 @@ bool AddItem(Item item, List * plist)
     return true;
 }
 
-/* visit each node and execute function pointed ti by pfun */
+/* visit each node and execute function pointed to by pfun */
 void Traverse(const List * plist, void (* pfun)(Item item))
 {
     Node * pnode;                      /* set to start of list   */
@@ -97,7 +97,7 @@ void Traverse(const List * plist, void (* pfun)(Item item))
     }
 }
 
-/* free memory allocated bt malloc() */
+/* free memory allocated by malloc() */
 /* set list pointer to NULL          */
 void EmptyTheList(List * plist)
 {
