@@ -102,5 +102,8 @@ int main(int argc, char **argv)
     for (int i = 0; i < ROW; i++)
         fprintf(fp_output, "%s\n", output[i]);
 
+    if (fclose(fp_input) || fclose(fp_output))
+        printf("Can't close the file\n");
+
     return 0;
 }

@@ -43,5 +43,8 @@ int main(void)
     while ((ch = getc(fp_input)) != EOF)
         putc(toupper(ch), fp_output);
 
+    fclose(fp_input);
+    fclose(fp_output);
+
     return 0;
 }

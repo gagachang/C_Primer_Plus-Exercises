@@ -32,5 +32,7 @@ int main(int argc, char **argv)
         file_count++;
     }
 
+    fclose(fp);
+
     return 0;
 }

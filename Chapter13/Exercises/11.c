@@ -38,5 +38,8 @@ int main(int argc, char **argv)
             printf("%s", line);
     }
 
+    if (fclose(fp) != 0)
+        printf("Can't close the file.\n");
+
     return 0;
 }
