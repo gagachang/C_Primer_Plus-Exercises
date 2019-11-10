@@ -19,6 +19,8 @@
  *   9                                      9
  *
  * Finally, output the 2d char array to screen and an output file.
+ *
+ * Reads from 12_input and outputs the result to 14_output.
  */
 #include <stdio.h>
 #include <stdlib.h>
