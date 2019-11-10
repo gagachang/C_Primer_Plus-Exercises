@@ -1,4 +1,6 @@
 /*
+ * Modifies exercises 12.c, use variable-length array (VLA)
+ *
  * This program will read a file into an 2d int array.
  * And convert the content of 2d int array to 2d char array.
  *
@@ -13,6 +15,8 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#define ROW 20
+#define COL 31
 
 int main(int argc, char **argv)
 {
@@ -23,8 +27,8 @@ int main(int argc, char **argv)
     }
 
     FILE * fp_input, * fp_output;
-    int input[20][30];
-    char output[20][31];
+    int input[ROW][COL - 1];
+    char *output[ROW];
 
     if ((fp_input = fopen("12_input", "r")) == NULL)
     {
@@ -32,23 +36,34 @@ int main(int argc, char **argv)
         exit(1);
     }
     
-    if ((fp_output = fopen("12_output", "w+")) == NULL)
+    if ((fp_output = fopen("13_output", "w+")) == NULL)
     {
         puts("Can't open output file.\n");
         exit(1);
     }
 
     /* Read the file into input array */
-    for (int i = 0; i < 20; i++)
-        for (int j = 0; j < 30; j++)
+    for (int i = 0; i < ROW; i++)
+        for (int j = 0; j < COL - 1; j++)
             fscanf(fp_input, "%d", &input[i][j]);
 
-    /* Initialize char array according to input array */
-    for (int i = 0; i < 20; i++)
+    /* Malloc the memory */
+    for (int i = 0; i < ROW; i++)
     {
-        for (int j = 0; j < 31; j++)
+        output[i] = (char *)malloc(sizeof(char) * COL);
+        if (!output[i])
         {
-            if (j == 30)
+            puts("Malloc failed!");
+            exit(1);
+        }
+    }
+
+    /* Initialize char array according to input array */
+    for (int i = 0; i < ROW; i++)
+    {
+        for (int j = 0; j < COL; j++)
+        {
+            if (j == COL - 1)
             {
                 output[i][j] = '\0';
                 continue;
@@ -82,11 +97,11 @@ int main(int argc, char **argv)
     }
 
     /* Output the array to screen */
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < ROW; i++)
         printf("%s\n", output[i]);
 
     /* Write the array into output file */
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < ROW; i++)
         fprintf(fp_output, "%s\n", output[i]);
 
     if (fclose(fp_input) || fclose(fp_output))
