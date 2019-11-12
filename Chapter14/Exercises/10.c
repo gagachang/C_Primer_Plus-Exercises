@@ -1,5 +1,5 @@
 /*
- * This program declare a function pointer array with five elements.
+ * This program declares a function pointer array with five elements.
  * And declare five funtions.
  *
  * Let the user input two integers and show the menu.
